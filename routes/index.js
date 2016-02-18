@@ -5,8 +5,18 @@ var projects = require('../projects.json');
  */
 
 exports.view = function(req, res){
-  	projects["grid"] = false;
+  	//projects["grid"] = false;
+  	//res.render('index', projects);
+
+  	var random_num = Math.random();
+	console.log(random_num);
+
+	if (random_num >=0) {
+  	projects['grid'] = false;
   	res.render('index', projects);
+	} else {
+  	res.redirect('/grid');
+	}
 };
 
 exports.viewGrid = function(req, res){
@@ -14,10 +24,4 @@ exports.viewGrid = function(req, res){
   	res.render('index', projects);	
 };
 
-
-
-function projectClick(e) { 
-	//$("a.like").click(projectClick);
-	ga("send", "event", "like", "click");
-}
 
