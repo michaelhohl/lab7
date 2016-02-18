@@ -37,6 +37,10 @@ if ('development' == app.get('env')) {
 
 // Add routes here
 app.get('/', index.view);
+
+//my code line below - slide 43
+app.get('/grid', index.viewGrid);
+
 app.get('/project/:id', project.view);
 // Example route
 // app.get('/users', user.list);
